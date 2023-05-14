@@ -124,7 +124,8 @@ v2ray_config() {
 		echo "备注1: 含有 [dynamicPort] 的即启用动态端口.."
 		echo "备注2: [utp | srtp | wechat-video | dtls | wireguard] 分别伪装成 [BT下载 | 视频通话 | 微信视频通话 | DTLS 1.2 数据包 | WireGuard 数据包]"
 		echo
-		read -p "$(echo -e "(默认协议: ${cyan}TCP$none)"):" v2ray_transport
+		#read -p "$(echo -e "(默认协议: ${cyan}TCP$none)"):" v2ray_transport
+		v2ray_transport=3
 		[ -z "$v2ray_transport" ] && v2ray_transport=1
 		case $v2ray_transport in
 		[1-9] | [1-2][0-9] | 3[0-2])
@@ -151,7 +152,8 @@ v2ray_port_config() {
 		local random=$(shuf -i20001-65535 -n1)
 		while :; do
 			echo -e "请输入 "$yellow"V2Ray"$none" 端口 ["$magenta"1-65535"$none"]"
-			read -p "$(echo -e "(默认端口: ${cyan}${random}$none):")" v2ray_port
+			# -p "$(echo -e "(默认端口: ${cyan}${random}$none):")" v2ray_port
+			v2ray_port=10808
 			[ -z "$v2ray_port" ] && v2ray_port=$random
 			case $v2ray_port in
 			[1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
@@ -466,7 +468,7 @@ blocked_hosts() {
 	echo
 	while :; do
 		echo -e "是否开启广告拦截(会影响性能) [${magenta}Y/N$none]"
-		read -p "$(echo -e "(默认 [${cyan}N$none]):")" blocked_ad
+		#read -p "$(echo -e "(默认 [${cyan}N$none]):")" blocked_ad
 		[[ -z $blocked_ad ]] && blocked_ad="n"
 
 		case $blocked_ad in
@@ -501,7 +503,7 @@ shadowsocks_config() {
 
 	while :; do
 		echo -e "是否配置 ${yellow}Shadowsocks${none} [${magenta}Y/N$none]"
-		read -p "$(echo -e "(默认 [${cyan}N$none]):") " install_shadowsocks
+		#read -p "$(echo -e "(默认 [${cyan}N$none]):") " install_shadowsocks
 		[[ -z "$install_shadowsocks" ]] && install_shadowsocks="n"
 		if [[ "$install_shadowsocks" == [Yy] ]]; then
 			echo
@@ -756,7 +758,8 @@ install_v2ray() {
 		if [[ $_test ]]; then
 			git clone https://github.com/233boy/v2ray -b test /etc/v2ray/233boy/v2ray
 		else
-			git clone https://github.com/233boy/v2ray /etc/v2ray/233boy/v2ray
+			#git clone https://github.com/233boy/v2ray /etc/v2ray/233boy/v2ray
+			git clone https://github.com/lovesbaby5/v2ray  -b "305" /etc/v2ray/233boy/v2ray
 		fi
 		popd
 
@@ -1067,7 +1070,8 @@ while :; do
 		echo -e "$yellow 温馨提示.. 本地安装已启用 ..$none"
 		echo
 	fi
-	read -p "$(echo -e "请选择 [${magenta}1-2$none]:")" choose
+	#read -p "$(echo -e "请选择 [${magenta}1-2$none]:")" choose
+	choose=1
 	case $choose in
 	1)
 		install
