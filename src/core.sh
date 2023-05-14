@@ -732,7 +732,7 @@ uninstall() {
         is_tmp_list=("卸载 $is_core_name" "卸载 ${is_core_name} & Caddy")
         ask list is_do_uninstall
     else
-        ask string y "是否卸载 ${is_core_name}? [y]:"
+        #ask string y "是否卸载 ${is_core_name}? [y]:"
     fi
     manage stop &>/dev/null
     manage disable &>/dev/null
