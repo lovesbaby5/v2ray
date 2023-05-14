@@ -1,6 +1,7 @@
 while :; do
 	echo
-	read -p "$(echo -e "是否卸载 ${yellow}V2Ray$none [${magenta}Y/N$none]:")" uninstall_v2ray_ask
+	#read -p "$(echo -e "是否卸载 ${yellow}V2Ray$none [${magenta}Y/N$none]:")" uninstall_v2ray_ask
+	uninstall_v2ray_ask="Y"
 	if [[ -z $uninstall_v2ray_ask ]]; then
 		error
 	else
