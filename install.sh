@@ -948,7 +948,7 @@ error() {
 
 pause() {
 
-	read -rsp "$(echo -e "按$green Enter 回车键 $none继续....或按$red Ctrl + C $none取消.")" -d $'\n'
+	#read -rsp "$(echo -e "按$green Enter 回车键 $none继续....或按$red Ctrl + C $none取消.")" -d $'\n'
 	echo
 }
 do_service() {
