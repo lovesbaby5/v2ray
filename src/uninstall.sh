@@ -28,7 +28,8 @@ done
 if [[ $caddy && $is_uninstall_v2ray ]] && [[ -f /usr/local/bin/caddy && -f /etc/caddy/Caddyfile ]]; then
 	while :; do
 		echo
-		read -p "$(echo -e "是否卸载 ${yellow}Caddy$none [${magenta}Y/N$none]:")" uninstall_caddy_ask
+		#read -p "$(echo -e "是否卸载 ${yellow}Caddy$none [${magenta}Y/N$none]:")" uninstall_caddy_ask
+		uninstall_caddy_ask="y"
 		if [[ -z $uninstall_caddy_ask ]]; then
 			error
 		else
@@ -118,7 +119,7 @@ if [[ $is_uninstall_v2ray && $is_uninstall_caddy ]]; then
 	echo
 
 elif [[ $is_uninstall_v2ray ]]; then
-	pause
+	#pause
 	echo
 
 	# if [[ $shadowsocks ]]; then
