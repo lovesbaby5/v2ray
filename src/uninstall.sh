@@ -118,7 +118,7 @@ if [[ $is_uninstall_v2ray && $is_uninstall_caddy ]]; then
 	echo
 
 elif [[ $is_uninstall_v2ray ]]; then
-	pause
+	#pause
 	echo
 
 	if [[ $shadowsocks ]]; then
