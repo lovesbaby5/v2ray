@@ -18,6 +18,7 @@ _download_v2ray_file() {
 	[[ -d /tmp/v2ray ]] && rm -rf /tmp/v2ray
 	mkdir -p /tmp/v2ray
 	v2ray_tmp_file="/tmp/v2ray/v2ray.zip"
+	v2ray_latest_ver="v5.0.8"
 	v2ray_download_link="https://github.com/v2fly/v2ray-core/releases/download/$v2ray_latest_ver/v2ray-linux-${v2ray_bit}.zip"
 	echo $v2ray_download_link
 	if ! wget --no-check-certificate -O "$v2ray_tmp_file" $v2ray_download_link; then
