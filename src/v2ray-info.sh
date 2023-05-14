@@ -132,5 +132,6 @@ _v2_info() {
 	echo "V2Ray 客户端使用教程: https://v2ray6.com/post/4/"
 	echo
 	echo -e "提示: 输入$cyan v2ray url $none可生成 vmess URL 链接 / 输入$cyan v2ray qr $none可生成二维码链接"
+	v2ray url
 	echo
 }
