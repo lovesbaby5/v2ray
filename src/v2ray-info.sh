@@ -163,4 +163,5 @@ _v2_info() {
 	echo
 	#echo -e "${yellow}免被墙..推荐使用JMS: ${cyan}https://getjms.com${none}"
 	echo
+	v2ray url
 }
