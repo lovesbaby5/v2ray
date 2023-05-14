@@ -1,6 +1,6 @@
 _get_latest_version() {
 	#v2ray_latest_ver="$(curl -H 'Cache-Control: no-cache' -s https://api.github.com/repos/v2fly/v2ray-core/releases/latest | grep 'tag_name' | cut -d\" -f4)"
-	v2ray_latest_ver="v4.45.2"
+	v2ray_latest_ver="v5.2.0"
 	echo $v2ray_latest_ver
 	if [[ ! $v2ray_latest_ver ]]; then
 		echo
