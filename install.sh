@@ -403,7 +403,7 @@ main() {
 
     load core.sh
     # create a tcp config
-    add quic ws
+    add quic
     # remove tmp dir and exit.
     exit_and_del_tmpdir ok
 }
