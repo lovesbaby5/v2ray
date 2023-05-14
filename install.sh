@@ -171,6 +171,7 @@ download() {
         ;;
     esac
 
+    echo $link
     msg warn "下载 ${name} > ${link}"
     if _wget -t 3 -q -c $link -O $tmpfile; then
         mv -f $tmpfile $is_ok
@@ -402,7 +403,7 @@ main() {
 
     load core.sh
     # create a tcp config
-    add tcp
+    add quic ws
     # remove tmp dir and exit.
     exit_and_del_tmpdir ok
 }
