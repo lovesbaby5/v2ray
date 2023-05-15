@@ -959,7 +959,6 @@ install() {
 	get_ip
 	config
 	show_config_info
-	v2ray url
 }
 uninstall() {
 
