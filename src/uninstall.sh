@@ -57,7 +57,7 @@ if [[ $caddy && $is_uninstall_v2ray ]] && [[ -f /usr/local/bin/caddy && -f /etc/
 fi
 
 if [[ $is_uninstall_v2ray && $is_uninstall_caddy ]]; then
-	pause
+	#pause
 	echo
 
 	# if [[ $shadowsocks ]]; then
